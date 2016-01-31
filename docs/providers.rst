@@ -69,6 +69,18 @@ Development callback URL
     https://localhost:8000/accounts/basecamp/login/callback/
 
 
+Draugiem
+---------
+
+Register your app here: https://www.draugiem.lv/applications/dev/create/?type=4
+
+Authentication documentation:
+    https://www.draugiem.lv/applications/dev/docs/passport/
+
+Development callback URL:
+    http://localhost:8000/accounts/draugiem/login/callback/
+
+
 Edmodo
 ------
 
@@ -246,6 +258,25 @@ App registration
     https://github.com/settings/applications/new
 
 
+GitLab
+------
+
+The GitLab provider works by default with https://gitlab.com. It allows you
+to connect to your private GitLab server and use GitLab as an OAuth2
+authentication provider as described in GitLab docs here:
+
+    http://doc.gitlab.com/ce/integration/oauth_provider.html
+
+Following GitLab settings are available, it unset https://gitlab.com will
+be used.
+
+GITLAB_URL:
+    Override endpoint to request an authorization and access token. For your
+    private GitLab server you use:
+
+        https://your.gitlab.server.tld
+
+
 Google
 ------
 
@@ -260,7 +291,7 @@ Create a google app to obtain a key and secret through the developer console:
 
 After you create a project you will have to create a "Client ID" and fill in some project details for the consent form that will be presented to the client.
 
-Under "APIs & auth" go to "Credentials" and create a new Client ID. Probably you will want a "Web application" Client ID. Provide your domain name or test domain name in "Authorized JavaScript origins". Finally fill in "http://127.0.0.1:8000/accounts/google/login/callback/" in the "Authorized redirect URI" field. You can fill multiple URLs, one for each test domain.After creating the Client ID you will find all details for the Django configuration on this page.
+Under "APIs & auth" go to "Credentials" and create a new Client ID. Probably you will want a "Web application" Client ID. Provide your domain name or test domain name in "Authorized JavaScript origins". Finally fill in "http://127.0.0.1:8000/accounts/google/login/callback/" in the "Authorized redirect URI" field. You can fill multiple URLs, one for each test domain. After creating the Client ID you will find all details for the Django configuration on this page.
 
 Users that login using the app will be presented a consent form. For this to work additional information is required. Under "APIs & auth" go to "Consent screen" and at least provide an email and product name.
 
@@ -445,6 +476,27 @@ look and feel of the Persona dialog::
               'REQUEST_PARAMETERS': {'siteName': 'Example' } } }
 
 
+Pinterest
+---------
+
+The Pinterest OAuth2 documentation:
+
+    https://developers.pinterest.com/docs/api/overview/#authentication
+
+You can optionally specify additional permissions to use. If no `SCOPE` value
+is set, the Pinterest provider will use `read_public` by default.::
+
+    SOCIALACCOUNT_PROVIDERS = {
+        'pinterest': {
+            'SCOPE': ['read_public', 'read_relationships']
+        }
+    }
+
+SCOPE
+
+For a full list of scope options, see https://developers.pinterest.com/docs/api/overview/#scopes
+
+
 SoundCloud
 ----------
 
@@ -533,6 +585,36 @@ The configuration is as follows:
 * Client id, is called "Consumer Key (API Key)" on Twitter
 * Secret key, is called "Consumer Secret (API Secret)" on Twitter
 * Key, is not needed, leave blank
+
+
+Untappd
+-------
+
+App registration
+****************
+
+    https://untappd.com/api/register?register=new
+
+In the app creation form fill in the development callback URL. E.g.::
+
+    http://127.0.0.1:8000/accounts/untappd/login/callback/
+
+For production, make it your production host. E.g.::
+
+   http://yoursite.com/accounts/untappd/login/callback/
+
+SocialApp configuration
+***********************
+
+The configuration values come from your API dashboard on Untappd:
+
+    https://untappd.com/api/dashboard
+
+* Provider: "Untappd"
+* Name: "Untappd"
+* Client id: "Client ID" from Untappd
+* Secret key: "Client Secret" from Untappd
+* Sites: choose your site
 
 
 Vimeo

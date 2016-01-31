@@ -37,9 +37,15 @@ Supported Providers
 
 - AngelList (OAuth2)
 
-- Bitbucket (OAuth)
+- Basecamp (OAuth2)
+
+- Baidu (OAuth2)
+
+- Bitbucket (OAuth, OAuth2)
 
 - Bitly (OAuth2)
+
+- Douban (OAuth2)
 
 - Dropbox (OAuth, OAuth2)
 
@@ -57,6 +63,8 @@ Supported Providers
 
 - Github (OAuth2)
 
+- GitLab (OAuth2)
+
 - Google (OAuth2)
 
 - Hubic (OAuth2)
@@ -67,6 +75,8 @@ Supported Providers
 
 - Mail.Ru (OAuth2)
 
+- Odnoklassniki (OAuth2)
+
 - OpenId
 
 - ORCID (OAuth2)
@@ -74,6 +84,10 @@ Supported Providers
 - Paypal (OAuth2)
 
 - Persona
+
+- Pinterest (OAuth2)
+
+- Reddit (OAuth2)
 
 - SoundCloud (OAuth2)
 
@@ -88,6 +102,8 @@ Supported Providers
 - Twitch (OAuth2)
 
 - Twitter (OAuth)
+
+- Untappd (OAuth2)
 
 - Vimeo (OAuth)
 
